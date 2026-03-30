@@ -26,7 +26,7 @@ This repository documents my learning journey through AI in Healthcare, a course
 
 ## Overview of My Learning Experience
 
-Coming into this course, I had a strong technical background in AI and cybersecurity but limited exposure to the clinical side of healthcare. Over the semester, I learned that AI in healthcare is not just about building models. It is about understanding the medical context behind the data, earning clinician trust, and navigating serious ethical concerns around bias, privacy, and accountability.
+Coming into this course, I had a good understanding of AI but limited exposure to the clinical side of healthcare. Over the semester, I learned that AI in healthcare is not just about building models. It is about understanding the medical context behind the data, earning clinician trust, and navigating serious ethical concerns around bias, privacy, and accountability.
 
 A few themes kept resurfacing throughout my work. First, AI tools are only as useful as the data they receive, whether that is structured patient records, free-text clinical notes, or social determinants of health. Second, technical performance alone does not drive adoption. Transparency, regulatory oversight, and clinician training are just as important. And third, the real-world stakes of getting AI wrong in healthcare are not abstract. They are measured in missed diagnoses, delayed treatments, and lives lost.
 
