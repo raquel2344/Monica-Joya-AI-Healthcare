@@ -1,69 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Module 2 – Healthcare Datasets | Monica Joya</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
 <style>
-  :root {
-    --pink-50: #FBEAF0; --pink-100: #F4C0D1; --pink-200: #ED93B1;
-    --rose-light: #fff0f4; --rose-mid: #fce4ec; --blush: #f9d0dd;
-    --mauve: #e8a0b8; --dusty: #c06080; --deep: #7a2040;
-    --ink: #2a0f1a; --cream: #fff8fa; --neutral: #5c3a47; --neutral-light: #9e7080;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2.5rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,248,250,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--blush); }
-  .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1rem; color: var(--deep); text-decoration: none; }
-  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-  .nav-links a { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--neutral); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--dusty); }
-  .hero { padding: 7rem 5rem 4rem; background: var(--cream); position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, var(--rose-mid) 0%, transparent 70%); pointer-events: none; }
-  .breadcrumb { font-size: 0.75rem; color: var(--neutral-light); margin-bottom: 1.5rem; }
-  .breadcrumb a { color: var(--dusty); text-decoration: none; }
-  .module-eyebrow { display: inline-block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dusty); border: 1px solid var(--mauve); background: var(--pink-50); padding: 0.3rem 0.8rem; border-radius: 100px; margin-bottom: 1.2rem; }
-  .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.12; color: var(--ink); margin-bottom: 1rem; }
-  .hero h1 em { font-style: italic; color: var(--dusty); }
-  .hero-meta { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem; }
-  .hero-meta-item { display: flex; flex-direction: column; gap: 2px; }
-  .hero-meta-label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mauve); }
-  .hero-meta-value { font-size: 0.85rem; color: var(--neutral); }
-  .content { padding: 3rem 5rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .card { background: white; border-radius: 18px; border: 1px solid var(--blush); overflow: hidden; display: flex; flex-direction: column; }
-  .card-header { background: var(--deep); padding: 1.5rem 1.8rem; display: flex; align-items: center; gap: 1rem; }
-  .card-icon { font-size: 1.4rem; }
-  .card-label { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mauve); }
-  .card-title { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--pink-50); margin-top: 2px; }
-  .card-body { padding: 1.8rem; flex: 1; display: flex; flex-direction: column; gap: 1rem; }
-  .card-desc { font-size: 0.88rem; line-height: 1.75; color: var(--neutral); }
-  .file-link { display: flex; align-items: center; gap: 0.8rem; padding: 0.9rem 1rem; border-radius: 10px; background: var(--rose-light); border: 1px solid var(--blush); text-decoration: none; color: var(--deep); font-size: 0.85rem; font-weight: 500; transition: background 0.2s, border-color 0.2s; margin-top: auto; }
-  .file-link:hover { background: var(--pink-50); border-color: var(--mauve); }
-  .file-link-icon { font-size: 1.1rem; }
-  .discussion-img { width: 100%; border-radius: 10px; border: 1px solid var(--blush); margin-top: 0.5rem; }
-  .reflection-section { padding: 0 5rem 5rem; }
-  .reflection-card { background: var(--deep); border-radius: 18px; padding: 2.5rem; color: var(--pink-50); }
-  .reflection-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mauve); margin-bottom: 1rem; }
-  .reflection-text { font-family: 'DM Serif Display', serif; font-size: 1.15rem; font-style: italic; line-height: 1.7; color: #e8cdd6; }
-  .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--deep); color: var(--pink-50); padding: 0.7rem 1.5rem; border-radius: 100px; text-decoration: none; font-size: 0.85rem; font-weight: 500; margin: 0 5rem 4rem; transition: background 0.2s; }
-  .back-btn:hover { background: var(--pink-200); color: var(--deep); }
-  @media (max-width: 800px) { .hero, .content, .reflection-section { padding-left: 1.5rem; padding-right: 1.5rem; } .content { grid-template-columns: 1fr; } .back-btn { margin-left: 1.5rem; } nav { padding: 1rem 1.5rem; } }
+  :root{--pink-50:#FBEAF0;--pink-100:#F4C0D1;--pink-200:#ED93B1;--rose-light:#fff0f4;--rose-mid:#fce4ec;--blush:#f9d0dd;--mauve:#e8a0b8;--dusty:#c06080;--deep:#7a2040;--ink:#2a0f1a;--cream:#fff8fa;--neutral:#5c3a47;--neutral-light:#9e7080;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(255,248,250,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--blush);}
+  .nav-logo{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--deep);text-decoration:none;}.nav-links{display:flex;gap:1.5rem;list-style:none;}.nav-links a{font-size:0.78rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--neutral);text-decoration:none;transition:color 0.2s;}.nav-links a:hover{color:var(--dusty);}
+  .hero{padding:7rem 5rem 4rem;background:var(--cream);position:relative;overflow:hidden;}.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,var(--rose-mid) 0%,transparent 70%);pointer-events:none;}
+  .breadcrumb{font-size:0.75rem;color:var(--neutral-light);margin-bottom:1.5rem;}.breadcrumb a{color:var(--dusty);text-decoration:none;}
+  .module-eyebrow{display:inline-block;font-size:0.72rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--dusty);border:1px solid var(--mauve);background:var(--pink-50);padding:0.3rem 0.8rem;border-radius:100px;margin-bottom:1.2rem;}
+  .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3.2rem);line-height:1.12;color:var(--ink);margin-bottom:1rem;}.hero h1 em{font-style:italic;color:var(--dusty);}
+  .hero-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;}.hero-meta-item{display:flex;flex-direction:column;gap:2px;}.hero-meta-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mauve);}.hero-meta-value{font-size:0.85rem;color:var(--neutral);}
+  .content{padding:3rem 5rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+  .card{background:white;border-radius:18px;border:1px solid var(--blush);overflow:hidden;display:flex;flex-direction:column;}.card-header{background:var(--deep);padding:1.5rem 1.8rem;display:flex;align-items:center;gap:1rem;}.card-icon{font-size:1.4rem;}.card-label{font-size:0.62rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mauve);}.card-title{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--pink-50);margin-top:2px;}.card-body{padding:1.8rem;flex:1;display:flex;flex-direction:column;gap:1rem;}.card-desc{font-size:0.88rem;line-height:1.75;color:var(--neutral);}
+  .file-link{display:flex;align-items:center;gap:0.8rem;padding:0.9rem 1rem;border-radius:10px;background:var(--rose-light);border:1px solid var(--blush);text-decoration:none;color:var(--deep);font-size:0.85rem;font-weight:500;transition:background 0.2s,border-color 0.2s;margin-top:auto;}.file-link:hover{background:var(--pink-50);border-color:var(--mauve);}.file-link-icon{font-size:1.1rem;}
+  .discussion-img{width:100%;border-radius:10px;border:1px solid var(--blush);margin-top:0.5rem;}
+  .reflection-section{padding:0 5rem 5rem;}.reflection-card{background:var(--deep);border-radius:18px;padding:2.5rem;color:var(--pink-50);}.reflection-label{font-size:0.68rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:1rem;}.reflection-text{font-family:'DM Serif Display',serif;font-size:1.15rem;font-style:italic;line-height:1.7;color:#e8cdd6;}
+  .back-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--deep);color:var(--pink-50);padding:0.7rem 1.5rem;border-radius:100px;text-decoration:none;font-size:0.85rem;font-weight:500;margin:0 5rem 4rem;transition:background 0.2s;}.back-btn:hover{background:var(--pink-200);color:var(--deep);}
+  @media(max-width:800px){.hero,.content,.reflection-section{padding-left:1.5rem;padding-right:1.5rem;}.content{grid-template-columns:1fr;}.back-btn{margin-left:1.5rem;}nav{padding:1rem 1.5rem;}}
 </style>
 </head>
 <body>
-<nav>
-  <a class="nav-logo" href="../index.html">Monica Joya</a>
-  <ul class="nav-links">
-    <li><a href="../index.html#modules">Modules</a></li>
-    <li><a href="../index.html#reflections">Reflections</a></li>
-    <li><a href="https://github.com/raquel2344/Monica-Joya-AI-Healthcare" target="_blank">GitHub ↗</a></li>
-  </ul>
-</nav>
-
+<nav><a class="nav-logo" href="../index.html">Monica Joya</a><ul class="nav-links"><li><a href="../index.html#modules">Modules</a></li><li><a href="../index.html#reflections">Reflections</a></li><li><a href="https://github.com/raquel2344/Monica-Joya-AI-Healthcare" target="_blank">GitHub ↗</a></li></ul></nav>
 <div class="hero">
   <div class="breadcrumb"><a href="../index.html">Portfolio</a> › Module 2</div>
   <div class="module-eyebrow">Module 02 · ITAI 4375</div>
@@ -75,46 +37,28 @@
     <div class="hero-meta-item"><span class="hero-meta-label">Semester</span><span class="hero-meta-value">Spring 2026</span></div>
   </div>
 </div>
-
 <div class="content">
   <div class="card">
-    <div class="card-header">
-      <div class="card-icon">📄</div>
-      <div class="card-header-text">
-        <div class="card-label">Written Assignment</div>
-        <div class="card-title">Healthcare Datasets Exploration</div>
-      </div>
-    </div>
+    <div class="card-header"><div class="card-icon">📄</div><div><div class="card-label">Written Assignment</div><div class="card-title">Healthcare Datasets Exploration</div></div></div>
     <div class="card-body">
       <p class="card-desc">A hands-on exploration of structured health data — examining MIMIC, FHIR, and real-world EHR formats. This assignment revealed how messy, incomplete, and biased clinical records challenge the performance of even the most carefully designed AI models.</p>
-      <a class="file-link" href="Assignment/" target="_blank">
-        <span class="file-link-icon">📎</span> View Assignment Files
-      </a>
+      <a class="file-link" href="Assignment/Joya_HealthcareDatasets_ITAI4375_2026-02-02-5.pdf" target="_blank"><span class="file-link-icon">📎</span> View Assignment PDF</a>
     </div>
   </div>
-
   <div class="card">
-    <div class="card-header">
-      <div class="card-icon">💬</div>
-      <div class="card-header-text">
-        <div class="card-label">Discussion Post</div>
-        <div class="card-title">Week 2 Discussion</div>
-      </div>
-    </div>
+    <div class="card-header"><div class="card-icon">💬</div><div><div class="card-label">Discussion Post</div><div class="card-title">Week 2 Discussion</div></div></div>
     <div class="card-body">
       <p class="card-desc">Weekly discussion on the challenges of working with real-world healthcare datasets — missing values, inconsistent coding standards, and the ethical dimensions of patient data access.</p>
       <img class="discussion-img" src="Discussion/discussion-2.png" alt="Discussion post screenshot" onerror="this.style.display='none'" />
     </div>
   </div>
 </div>
-
 <div class="reflection-section">
   <div class="reflection-card">
     <div class="reflection-label">Module Reflection</div>
     <p class="reflection-text">"Healthcare data is not clean data. Working with MIMIC and FHIR structures made clear that the gap between a raw EHR and a model-ready dataset is enormous — and that every preprocessing decision carries ethical weight."</p>
   </div>
 </div>
-
 <a class="back-btn" href="../index.html">← Back to Portfolio</a>
 </body>
 </html>
