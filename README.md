@@ -1,3 +1,5 @@
+**See Webpage for this repo:** https://raquel2344.github.io/Monica-Joya-AI-Healthcare/
+
 # AI in Healthcare – Course Portfolio
 
 **Student:** Monica Joya  
@@ -5,8 +7,6 @@
 **Instructor:** Professor Dr. Doreen Rosenstrauch  
 **Institution:** Houston City College  
 **Semester:** Spring 2026
-
-**See Webpage for this repo:** https://raquel2344.github.io/Monica-Joya-AI-Healthcare/
 
 ## About This Portfolio
 
